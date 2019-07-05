@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<groupId>org.springframework.boot</groupId>
+		<version>2.1.5.RELEASE</version>
+		<relativePath />
+	</parent>
+
+	<groupId>com.infobelt</groupId>
+	<artifactId>task-app</artifactId>
+	<version>1.0</version>
+
+	<name>Aadhaar - Template Application</name>
+
+	<repositories>
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<id>infobelt-nexus</id>
+			<url>https://nexus.jx.infobelt.com/repository/maven-releases/</url>
+		</repository>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>jcenter-releases</id>
+			<name>jcenter</name>
+			<url>http://jcenter.bintray.com</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+
+		<!-- Include both lombok and Aadhaar -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.infobelt.aadhaar</groupId>
+			<artifactId>aadhaar-spring-boot</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+
+
+		<!-- You still need to include spring boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+			<version>1.4.199</version>
+		</dependency>
+
+		<!-- Including the swagger URL will make it available at http://localhost:8080/swagger-ui.html -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+
+		<!-- We use Jest by default for our ES integration -->
+		<dependency>
+			<groupId>com.github.vanroy</groupId>
+			<artifactId>spring-boot-starter-data-jest</artifactId>
+			<version>3.2.2.RELEASE</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- We will use H2 to demo, remove this or scope to test for real life -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+
+		<!-- Lets use Liquibase to manage our DB schema -->
+		<dependency>
+			<groupId>org.liquibase</groupId>
+			<artifactId>liquibase-core</artifactId>
+		</dependency>
+
+		<!-- Testing -->
+		<dependency>
+			<groupId>com.infobelt.aadhaar</groupId>
+			<artifactId>aadhaar-test</artifactId>
+			<version>0.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- We use this to dump our documentation -->
+		<dependency>
+			<groupId>io.github.swagger2markup</groupId>
+			<artifactId>swagger2markup</artifactId>
+			<version>1.3.3</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+</project>

@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01
+      author: aadhaar-template
+      changes:
+        - createSequence:
+            cycle: true
+            incrementBy: 1
+            sequenceName: hibernate_sequence
+            startValue: 1
