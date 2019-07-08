@@ -34,7 +34,7 @@ public class Swagger2Config implements WebMvcConfigurer {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(getApiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.infobelt.aadhaar.sample"))
+                .apis(RequestHandlerSelectors.basePackage("com.infobelt.aadhaar"))
                 .paths(PathSelectors.any())
                 .build();
     }

@@ -1,8 +1,10 @@
 package com.infobelt.aadhaar.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.infobelt.aadhaar.pojo.Todo;
+import com.infobelt.aadhaar.pojo.Task;
+import org.springframework.stereotype.Repository;
 
-public interface TaskRepository  extends CrudRepository<Todo, Integer> {
+@Repository
+public interface TaskRepository  extends JpaRepository<Task, Long> {
 }

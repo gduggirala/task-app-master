@@ -15,8 +15,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableJpaRepositories(basePackages = "com.infobelt.aadhaar.repository")
 @ComponentScan("com.infobelt.*")
 @EntityScan("com.infobelt.*")
-public class SampleApplication{
+public class Application {
     public static void main(String[] args) {
-        SpringApplication.run(SampleApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 }
+
